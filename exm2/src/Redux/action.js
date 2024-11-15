@@ -6,7 +6,13 @@ export const INC_COUNT = "INC_COUNT";
 export const DEC_COUNT = "DEC_COUNT";
 export const RESET_COUNT = "RESET_COUNT";
 
+// ADDING TODOS
+
 export const ADD_TODO = "ADD_TODO";
+
+export const TOGGLE_TODO = "TOGGLE_TODO";
+
+export const DELETE_TODO = "DELETE_TODO";
 
 // action creators
 
@@ -24,7 +30,17 @@ export const resetCount = (data) =>({
      type: RESET_COUNT
 })
 
-export const addTodo = (data) =>({
+export const addTodo = (payload) =>({
     type:ADD_TODO,
-    payload:data
+    payload
+})
+
+export const toggleTodo = (payload) =>({
+    type:TOGGLE_TODO,
+    payload
+})
+
+export const deleteTodo = (payload) =>({
+    type:"DELETE_TODO",
+    payload
 })

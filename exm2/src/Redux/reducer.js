@@ -1,4 +1,4 @@
-import { INC_COUNT, DEC_COUNT,RESET_COUNT } from "./action";
+import { INC_COUNT, DEC_COUNT,RESET_COUNT, ADD_TODO, TOGGLE_TODO, DELETE_TODO } from "./action";
 
 export const reducer = (store, action) =>{
      switch(action.type){
@@ -25,6 +25,20 @@ export const reducer = (store, action) =>{
                 ...store,
                 todos:[ ...store.todos, action.payload]
             };
+
+        case TOGGLE_TODO :
+            return {
+                ...store,
+                todos: store.todos.map((todo) =>
+                    todo.id === action.payload ? { ...todo, status: !todo.status} : todo
+                )
+            }
+
+        case DELETE_TODO:
+            return {
+                ...store,
+                todos: store.todos.filter((todos) => todos.id !== action.payload)
+            }
 
         default:
                 return store;
