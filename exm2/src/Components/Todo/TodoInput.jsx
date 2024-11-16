@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import {v4 as uuid} from "uuid";
 
-import { addTodo } from '../../Redux/action';
+import { addTodo } from '../../Redux/Todo/action';
 
 const TodoInput = () => {
 

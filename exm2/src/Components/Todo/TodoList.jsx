@@ -1,11 +1,11 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { deleteTodo, toggleTodo } from '../../Redux/action'
+import { deleteTodo, toggleTodo } from '../../Redux/Todo/action'
 
 const TodoList = () => {
 
-const {todos} = useSelector((state) => state);
+const {todos} = useSelector((state) => state.todos);
 
 const dispatch = useDispatch();
 

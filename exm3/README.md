@@ -1,0 +1,1 @@
+- How we can make the network request and also work with redux (basic)
