@@ -1,9 +1,24 @@
 {
-    "posts": [
-      { "id": 1, "title": "First Post", "author": "John Doe" }
-    ],
-    "comments": [
-      { "id": 1, "postId": 1, "body": "Great post!" }
-    ]
-  }
-  
+  "todos": [
+    {
+      "title": "Eat",
+      "status": false,
+      "id": 1
+    },
+    {
+      "title": "Sleep",
+      "status": false,
+      "id": 2
+    },
+    {
+      "title": "Code",
+      "status": false,
+      "id": 3
+    },
+    {
+      "title": "Repeat",
+      "status": false,
+      "id": 4
+    }
+  ]
+}
