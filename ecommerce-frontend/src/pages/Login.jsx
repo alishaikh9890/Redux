@@ -2,9 +2,10 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import { Password } from '@mui/icons-material';
+import Button from '@mui/material/Button';
+import axios from 'axios';
 
-const Login = () => {
+export const Login = () => {
     const [loginData, setLoginData] = React.useState({
         email: "",
         password: ""
@@ -13,11 +14,22 @@ const Login = () => {
     const handleChange = (e) =>{
         const {name, value} = e.target;
         setLoginData(prev => ({
-            ...prve,
+            ...prev,
             [name]:value
         }))
 
     }
+
+    const handleLogin = () => {
+      axios({
+        method:"POST",
+        url : "https://reqres.in/api/login",
+        data : loginData
+      })
+
+    }
+
+
   return (
     <Box
     component="form"
@@ -26,12 +38,13 @@ const Login = () => {
     autoComplete="off"
   >
     {Object.keys(loginData).map(el => <TextField id={el} value={loginData[el]} name={el} onChange={handleChange} label={el.toLocaleLowerCase()} variant="outlined" /> )}
+    <Button onClick={handleLogin} variant="outlined">Log IN</Button>
     
   </Box>
   )
 }
 
-export default Login
+
 
 
 

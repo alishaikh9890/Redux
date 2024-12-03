@@ -1,5 +1,5 @@
 
-import { Pages } from '@mui/icons-material';
+import { Pages } from './pages/Pages';
 import './App.css';
 import { Navbar } from './components/Navbar';
 

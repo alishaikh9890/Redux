@@ -1,8 +1,8 @@
-import { Login } from '@mui/icons-material';
+import {Login} from './Login'
 import React from 'react'
-import {Routes, Routes} from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
 
-const Pages = () => {
+export const Pages = () => {
   return (
     <div>
         <Routes>
@@ -12,4 +12,3 @@ const Pages = () => {
   )
 }
 
-export default Pages
