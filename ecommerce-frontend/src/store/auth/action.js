@@ -6,7 +6,7 @@ export const loginLoading = () =>{
     }
 }
 
-export const loginSucess = (payload) =>{
+export const loginSuccess = (payload) =>{
     return {
         type : LOGIN_SUCCESS,
         payload
@@ -19,7 +19,7 @@ export const loginError = () =>{
     }
 }
 
-export const logoutSucess = () =>{
+export const logoutSuccess = () =>{
     return {
         type : LOGOUT_SUCCESS
     }

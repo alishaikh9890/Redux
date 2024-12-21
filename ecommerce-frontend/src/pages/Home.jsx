@@ -1,12 +1,19 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import axios from 'axios'
+import React, {useState, useEffect} from 'react'
+import { useFetchProducts } from '../hook/fetchProducts'
 
 const Home = () => {
 
-    const token = useSelector(state => state.auth.token)
+  const {loading, error, data} = useFetchProducts("http://localhost:8000/products");
+
+
+
   return (
-    <div>Home</div>
+    loading ? <h2>...loading</h2>
+    : error ? <h2>...error</h2>
+    : data.map(el => <div key={el.id}>{el.title}</div>)
   )
 }
 
 export default Home
+
