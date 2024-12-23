@@ -56,7 +56,7 @@ export const Login = () => {
     noValidate
     autoComplete="off"
   >
-    {Object.keys(loginData).map(el => <TextField id={el} value={loginData[el]} name={el} onChange={handleChange} label={el.toLocaleLowerCase()} variant="outlined" /> )}
+    {Object.keys(loginData).map(el => <TextField key={el.id} id={el} value={loginData[el]} name={el} onChange={handleChange} label={el.toLocaleLowerCase()} variant="outlined" /> )}
     <Button onClick={handleLogin} variant="outlined">Log IN</Button>
     
   </Box>

@@ -6,12 +6,12 @@ import { Button } from "@mui/material";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
-const Home = () => {
+const Grocery = () => {
   const [ratingFilter, setRatingFilter] = useState([])
   const [sort, setSort] = useState(null)
   const [page, setPage] = useState(1);
   const { loading, error, data } = useFetchProducts(
-    "http://localhost:8000/products", page, sort, ratingFilter
+    "http://localhost:8000/products?category_like=grocery", page, sort, ratingFilter
   );
 
   const handleSort =(type) => {
@@ -74,4 +74,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Grocery;

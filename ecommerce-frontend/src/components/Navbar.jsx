@@ -14,8 +14,11 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
+import LogoutIcon from '@mui/icons-material/Logout';
 import MailIcon from "@mui/icons-material/Mail";
+import HomeIcon from '@mui/icons-material/Home';
+import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
+import LocalPharmacyIcon from '@mui/icons-material/LocalPharmacy';
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -45,9 +48,33 @@ export const Navbar = () => {
           <ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                <InboxIcon />
+                <HomeIcon />
               </ListItemIcon>
               <ListItemText primary={"Home"} />
+            </ListItemButton>
+          </ListItem>
+        </Link>
+      </List>
+      <List>
+        <Link to="/grocery">
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <LocalGroceryStoreIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Grocery"} />
+            </ListItemButton>
+          </ListItem>
+        </Link>
+      </List>
+      <List>
+        <Link to="/pharmacy">
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <LocalPharmacyIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Pharmcay"} />
             </ListItemButton>
           </ListItem>
         </Link>
@@ -58,7 +85,7 @@ export const Navbar = () => {
           <ListItem disablePadding>
             <ListItemButton onClick={handleLogout}>
               <ListItemIcon>
-                <MailIcon />
+                <LogoutIcon />
               </ListItemIcon>
               <ListItemText primary={"Log Out"} />
             </ListItemButton>
