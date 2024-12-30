@@ -18,6 +18,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import MailIcon from "@mui/icons-material/Mail";
 import HomeIcon from '@mui/icons-material/Home';
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import LocalPharmacyIcon from '@mui/icons-material/LocalPharmacy';
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -75,6 +76,18 @@ export const Navbar = () => {
                 <LocalPharmacyIcon />
               </ListItemIcon>
               <ListItemText primary={"Pharmcay"} />
+            </ListItemButton>
+          </ListItem>
+        </Link>
+      </List>
+      <List>
+        <Link to="/cart">
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <ShoppingBagIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Cart"} />
             </ListItemButton>
           </ListItem>
         </Link>
