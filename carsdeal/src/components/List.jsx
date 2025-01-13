@@ -1,6 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { Card } from './Card'
-import axios from 'axios'
+import axios from 'axios';
+
+
+const filterBtnsArr = ["Ford", "Volvo", "Audi", "BMW"]
+
+const generateQP = (filter) => {
+    
+
+    return "&brand_like=" + [...filter].join("&brand_like=");
+}
 
 export const List = () => {
     const [data, setData] = useState([]);
@@ -9,10 +18,17 @@ export const List = () => {
     const [filter, setFilter] = useState([]);
 
 
-    const fetchData = () =>{
-        if(!sort){
-            axios.get(`http://localhost:3004/mobiles?_page=${page}&_limit=8`)
-            .then(res => setData(res.data))
+     const fetchData = () =>{
+        if(!sort)
+            {
+            if(!filter.length){
+                axios.get(`http://localhost:3004/mobiles?_page=${page}&_limit=8`)
+                .then(res => setData(res.data))
+            }
+            else{
+                axios.get(`http://localhost:3004/mobiles?_page=${page}&_limit=8${generateQP(filter)}`)
+                .then(res => setData(res.data))
+            }
         }
         else
         {
@@ -23,9 +39,8 @@ export const List = () => {
 
     useEffect(() => {
        fetchData();
-      }, [page,sort])
+      }, [page, sort, filter])
     
-
    const handleFilter = (item) => {
         if(filter.includes(item))
         {
@@ -40,7 +55,6 @@ export const List = () => {
         }
     }
 
-
   return (
         <div>
             <div>
@@ -49,17 +63,19 @@ export const List = () => {
                 <button onClick={() => setSort("")}>Dont Sort</button>
             </div>
             <div>
-                <button onClick={() => handleFilter("BMW")}>BMW</button>
+                {
+                    filterBtnsArr.map((el) => <button onClick={() => handleFilter(el)}>{el}</button>)
+                }
             </div>
             <div style={{display:"grid", gridTemplateColumns:"auto auto auto", gap: "10px"}}>
                 {
                     data.map((el) => 
-                        <Card {...el} />
+                        <Card {...el} key={el.id} />
                     )
                 }
             </div>
             <div>
-                <button disabled={page==1} onClick={() => setPage(page-1)}>Prev</button>
+                <button disabled={page===1} onClick={() => setPage(page-1)}>Prev</button>
                 <button disabled>{page}</button>
                 <button onClick={() => setPage(page+1)}>Next</button>
             </div>

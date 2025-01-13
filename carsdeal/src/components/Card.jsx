@@ -1,20 +1,9 @@
 import React, { useEffect } from 'react'
 import CardStyles from "./Card.module.css";
-import axios from 'axios';
 import { imgArr } from '../data/imagesArr';
 
 export const Card = ({id, brand, modal, price, year, rating}) => {
 
-
-
-  const obj = {
-    "id" : 1,
-    "brand" : "Volkswagen",
-    "modal" : "New Beetle",
-    "year" : 2010,
-    "price" : 94391,
-    "rating" : 2.8
-  }
 
   return (
     <div className={CardStyles.CardContainer}>
