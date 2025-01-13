@@ -1,0 +1,38 @@
+.CardContainer{
+    box-shadow: 0 3px 0px rgb(0 0 0 / 0.2);
+    border: 1px solid gainsboro;
+    max-width: 350px;
+    border-radius: 15px;
+    padding: 20px;
+    margin: auto;
+}
+
+
+
+.CardContainer > *{
+    font-family: sans-serif;
+}
+
+.imgDiv img{
+    width:100%;
+}
+
+.detailsDiv{
+    display: flex;
+    justify-content: center;
+}
+
+.detailsDiv > div {
+    font-weight: bold;
+    margin: 2px 5px;
+}
+
+.price{
+    font-weight: bold;
+    color:green
+}
+
+.costDiv{
+    display: flex;
+    justify-content: space-around;
+}
