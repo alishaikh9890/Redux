@@ -69,8 +69,8 @@ export const List = () => {
             </div>
             <div style={{display:"grid", gridTemplateColumns:"auto auto auto", gap: "10px"}}>
                 {
-                    data.map((el) => 
-                        <Card {...el} key={el.id} />
+                    data.map((el, index) => 
+                        <Card{...el}  key={index} />
                     )
                 }
             </div>
